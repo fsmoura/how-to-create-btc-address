@@ -11,3 +11,12 @@ console.log(convert.bin2dec('111')); // '7'
 console.log(convert.dec2hex('42'));  // '2a'
 console.log(convert.hex2bin('f8'));  // '11111000'
 console.log(convert.dec2bin('22'));  // '10110
+
+// Convert bytes array to hexdecimal
+function bytesToHex(byteArray) {
+  var s = '';
+  byteArray.forEach((byte) => {
+    s += ('0' + (byte & 0xFF).toString(16)).slice(-2);
+  })
+  return s;
+}
